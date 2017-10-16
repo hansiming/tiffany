@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 /**
+ * 使用Kryo序列化
  * Created by hansiming on 2017/10/16.
  */
 public class KryoSerializetion implements Serializable {
