@@ -10,8 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>tiffany-transport</module>
-        <module>tiffany-common</module>
+        <module>tiffany-core</module>
         <module>tiffany-springsupport</module>
+        <module>tiffany-demo</module>
     </modules>
 
 

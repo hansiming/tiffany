@@ -21,6 +21,40 @@
         </xsd:attribute>
     </xsd:complexType>
 
+    <xsd:complexType name="service">
+        <xsd:attribute name="interface" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Service Interface ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="ref" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Service Ref ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="registry">
+        <xsd:attribute name="protocol" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Registry Protocol Like Zookeeper ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="address"  type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Registry Protocol Address ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="protocol">
+        <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="port" type="xsd:string" use="required"></xsd:attribute>
+    </xsd:complexType>
+
     <xsd:element name="student" type="studentType"></xsd:element>
+    <xsd:element name="protocol" type="protocol"></xsd:element>
+    <xsd:element name="registry" type="registry"></xsd:element>
+    <xsd:element name="service" type="service"></xsd:element>
 
 </xsd:schema>
