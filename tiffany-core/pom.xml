@@ -11,11 +11,21 @@
 
     <artifactId>tiffany-core</artifactId>
 
+    <properties>
+        <kryo.version>4.0.0</kryo.version>
+        <snappy.version>1.1.2.6</snappy.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.esotericsoftware</groupId>
             <artifactId>kryo</artifactId>
-            <version>4.0.0</version>
+            <version>${kryo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>${snappy.version}</version>
         </dependency>
     </dependencies>
 

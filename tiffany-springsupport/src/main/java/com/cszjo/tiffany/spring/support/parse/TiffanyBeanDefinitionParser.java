@@ -2,6 +2,7 @@ package com.cszjo.tiffany.spring.support.parse;
 
 import com.cszjo.tiffany.common.config.AbstractConfig;
 import com.cszjo.tiffany.common.config.ServiceConfig;
+import com.cszjo.tiffany.common.exception.TiffanyParseException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
@@ -42,7 +43,7 @@ public class TiffanyBeanDefinitionParser implements BeanDefinitionParser {
             builder.addPropertyValue("interfaceClazz", interfaceClazz);
             this.id = interfaceClazz;
         } else {
-            throw new IllegalStateException("The exported service 'interface' property can`t be null or empty!");
+            throw new TiffanyParseException("The exported service 'interface' property can`t be null or empty!");
         }
         addRefBeanDefinition(ref, parserContext, builder);
         return builder.getBeanDefinition();
@@ -50,12 +51,12 @@ public class TiffanyBeanDefinitionParser implements BeanDefinitionParser {
 
     private BeanDefinitionBuilder addRefBeanDefinition(String property, ParserContext parserContext, BeanDefinitionBuilder builder) {
         if (StringUtils.isBlank(property)) {
-            throw new RuntimeException("The exported service 'ref' property can`t be null or empty!");
+            throw new TiffanyParseException("The exported service 'ref' property can`t be null or empty!");
         }
         if (parserContext.getRegistry().containsBeanDefinition(property)) {
             BeanDefinition refDefinition = parserContext.getRegistry().getBeanDefinition(property);
             if (!refDefinition.isSingleton()) {
-                throw new IllegalStateException("The exported service ref " + property + " must be singleton! Please set the " + property
+                throw new TiffanyParseException("The exported service ref " + property + " must be singleton! Please set the " + property
                         + " bean scope to singleton, eg: <bean id=\"" + property + "\" scope=\"singleton\" ...>");
             }
             builder.addPropertyValue("ref", new RuntimeBeanReference(property));

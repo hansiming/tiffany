@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by hansiming on 2017/10/23.
  */
-public class Application {
+public class TiffanyServerApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
