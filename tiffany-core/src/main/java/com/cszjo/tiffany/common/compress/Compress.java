@@ -7,7 +7,11 @@ import java.io.IOException;
  */
 public interface Compress {
 
+    int BUFFER_SIZE = 256;
+
+    int MAX_BUFFER_SIZE = 1024 * 1024;
+
     byte[] compress(byte[] array) throws IOException;
 
-    byte[] uncompress(byte[] array) throws IOException;
+    byte[] decompress(byte[] array) throws IOException;
 }

@@ -11,7 +11,7 @@ public class NoCompress implements Compress {
         return array;
     }
 
-    public byte[] uncompress(byte[] array) throws IOException {
+    public byte[] decompress(byte[] array) throws IOException {
         return array;
     }
 }
