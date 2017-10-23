@@ -1,7 +1,7 @@
 package com.cszjo.tiffany.spring.support;
 
-import com.cszjo.tiffany.spring.support.parse.ServiceBeanDefintionParser;
-import com.cszjo.tiffany.spring.support.parse.StudentBeanDefinitionParser;
+import com.cszjo.tiffany.common.config.ServiceConfig;
+import com.cszjo.tiffany.spring.support.parse.TiffanyBeanDefinitionParser;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 public class TiffanyNamespaceHandler extends NamespaceHandlerSupport {
 
     public void init() {
-        registerBeanDefinitionParser("student", new StudentBeanDefinitionParser());
-        registerBeanDefinitionParser("service", new ServiceBeanDefintionParser());
+        registerBeanDefinitionParser("service", new TiffanyBeanDefinitionParser(ServiceConfig.class));
     }
 }
