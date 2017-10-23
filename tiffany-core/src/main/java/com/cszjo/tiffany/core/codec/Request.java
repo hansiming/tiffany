@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.codec;
+package com.cszjo.tiffany.core.codec;
 
 import java.util.Arrays;
 

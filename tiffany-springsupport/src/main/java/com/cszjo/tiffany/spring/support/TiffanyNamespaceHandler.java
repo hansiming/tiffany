@@ -1,6 +1,6 @@
 package com.cszjo.tiffany.spring.support;
 
-import com.cszjo.tiffany.common.config.ServiceConfig;
+import com.cszjo.tiffany.core.config.ServiceConfig;
 import com.cszjo.tiffany.spring.support.parse.TiffanyBeanDefinitionParser;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 

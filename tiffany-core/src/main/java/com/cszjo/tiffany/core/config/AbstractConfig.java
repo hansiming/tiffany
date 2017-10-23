@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.config;
+package com.cszjo.tiffany.core.config;
 
 /**
  * Created by hansiming on 2017/10/23.

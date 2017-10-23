@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.compress;
+package com.cszjo.tiffany.core.compress;
 
 import java.io.IOException;
 

@@ -1,11 +1,9 @@
-package com.cszjo.tiffany.common.compress;
+package com.cszjo.tiffany.core.compress;
 
 import net.jpountz.lz4.LZ4Compressor;
 import net.jpountz.lz4.LZ4Factory;
-import net.jpountz.lz4.LZ4FastDecompressor;
 import net.jpountz.lz4.LZ4SafeDecompressor;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**

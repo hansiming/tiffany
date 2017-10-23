@@ -1,7 +1,7 @@
 package com.cszjo.tiffany.transport;
 
-import com.cszjo.tiffany.common.codec.Message;
-import com.cszjo.tiffany.common.codec.Request;
+import com.cszjo.tiffany.core.codec.Message;
+import com.cszjo.tiffany.core.codec.Request;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.serialize;
+package com.cszjo.tiffany.core.serialize;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.FastInput;

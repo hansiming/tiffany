@@ -1,6 +1,5 @@
-import com.cszjo.tiffany.common.compress.Compress;
-import com.cszjo.tiffany.common.compress.LZ4Compress;
-import com.cszjo.tiffany.common.compress.SnappyCompress;
+import com.cszjo.tiffany.core.compress.Compress;
+import com.cszjo.tiffany.core.compress.LZ4Compress;
 import org.junit.Test;
 
 /**

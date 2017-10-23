@@ -1,8 +1,8 @@
 package com.cszjo.tiffany.spring.support.parse;
 
-import com.cszjo.tiffany.common.config.AbstractConfig;
-import com.cszjo.tiffany.common.config.ServiceConfig;
-import com.cszjo.tiffany.common.exception.TiffanyParseException;
+import com.cszjo.tiffany.core.config.AbstractConfig;
+import com.cszjo.tiffany.core.config.ServiceConfig;
+import com.cszjo.tiffany.core.exception.TiffanyParseException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.RuntimeBeanReference;

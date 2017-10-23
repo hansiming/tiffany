@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.codec;
+package com.cszjo.tiffany.core.codec;
 
 /**
  * Created by hansiming on 2017/10/16.

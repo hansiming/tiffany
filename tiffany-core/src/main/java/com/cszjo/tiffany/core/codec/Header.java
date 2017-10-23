@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.codec;
+package com.cszjo.tiffany.core.codec;
 
 /**
  * 0-15	    16-23	  24-31	   32-95	96-127

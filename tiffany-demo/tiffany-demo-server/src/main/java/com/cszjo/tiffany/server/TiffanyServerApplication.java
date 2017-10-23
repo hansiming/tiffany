@@ -1,6 +1,6 @@
 package com.cszjo.tiffany.server;
 
-import com.cszjo.tiffany.common.config.AbstractConfig;
+import com.cszjo.tiffany.core.config.AbstractConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

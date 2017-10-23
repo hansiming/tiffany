@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.serialize;
+package com.cszjo.tiffany.core.serialize;
 
 /**
  * 序列化接口

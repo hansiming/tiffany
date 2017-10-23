@@ -1,4 +1,4 @@
-package com.cszjo.tiffany.common.exception;
+package com.cszjo.tiffany.core.exception;
 
 /**
  * Created by hansiming on 2017/10/23.
