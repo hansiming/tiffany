@@ -1,5 +1,6 @@
-package com.cszjo.tiffany.core.compress;
+package com.cszjo.tiffany.core.compress.impl;
 
+import com.cszjo.tiffany.core.compress.Compress;
 import net.jpountz.lz4.LZ4Compressor;
 import net.jpountz.lz4.LZ4Factory;
 import net.jpountz.lz4.LZ4SafeDecompressor;

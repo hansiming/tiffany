@@ -1,5 +1,5 @@
 import com.cszjo.tiffany.core.compress.Compress;
-import com.cszjo.tiffany.core.compress.LZ4Compress;
+import com.cszjo.tiffany.core.compress.impl.LZ4Compress;
 import org.junit.Test;
 
 /**

@@ -1,4 +1,4 @@
-import com.cszjo.tiffany.core.serialize.KryoSerializetion;
+import com.cszjo.tiffany.core.serialize.impl.KryoSerializetion;
 import com.cszjo.tiffany.core.serialize.Serializable;
 import org.junit.Test;
 

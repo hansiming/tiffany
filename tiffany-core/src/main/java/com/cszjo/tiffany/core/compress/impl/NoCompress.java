@@ -1,4 +1,6 @@
-package com.cszjo.tiffany.core.compress;
+package com.cszjo.tiffany.core.compress.impl;
+
+import com.cszjo.tiffany.core.compress.Compress;
 
 import java.io.IOException;
 

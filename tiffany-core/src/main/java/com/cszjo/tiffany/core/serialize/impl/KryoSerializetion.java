@@ -1,5 +1,6 @@
-package com.cszjo.tiffany.core.serialize;
+package com.cszjo.tiffany.core.serialize.impl;
 
+import com.cszjo.tiffany.core.serialize.Serializable;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.FastInput;
 import com.esotericsoftware.kryo.io.FastOutput;
