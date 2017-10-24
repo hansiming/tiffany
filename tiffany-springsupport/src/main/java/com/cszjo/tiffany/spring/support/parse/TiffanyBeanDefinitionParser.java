@@ -4,6 +4,8 @@ import com.cszjo.tiffany.core.config.AbstractConfig;
 import com.cszjo.tiffany.core.config.ServiceConfig;
 import com.cszjo.tiffany.core.exception.TiffanyParseException;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
@@ -16,8 +18,9 @@ import org.w3c.dom.Element;
  */
 public class TiffanyBeanDefinitionParser implements BeanDefinitionParser {
 
+    private final Logger                    LOGGER = LoggerFactory.getLogger(TiffanyBeanDefinitionParser.class);
+    private String                          id;
     private Class<? extends AbstractConfig> configClazz;
-    private String id;
 
     public TiffanyBeanDefinitionParser(Class<? extends AbstractConfig> configClazz) {
         this.configClazz = configClazz;

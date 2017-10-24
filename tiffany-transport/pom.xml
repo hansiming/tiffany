@@ -15,7 +15,7 @@
         <!-- Tiffany Common -->
         <dependency>
             <groupId>com.cszjo</groupId>
-            <artifactId>tiffany-common</artifactId>
+            <artifactId>tiffany-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <!-- Netty-All 4 -->
