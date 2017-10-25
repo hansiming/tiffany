@@ -23,6 +23,11 @@
             <artifactId>tiffany-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.cszjo</groupId>
+            <artifactId>tiffany-demo</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
 
         <!-- Spring 4.3.5 RELEASE -->
         <dependency>
