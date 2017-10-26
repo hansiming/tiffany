@@ -8,20 +8,13 @@
 
     <xsd:import namespace="http://www.springframework.org/schema/beans"/>
 
-    <xsd:complexType name="studentType">
-        <xsd:attribute name="id" type="xsd:integer" use="required">
-            <xsd:annotation>
-                <xsd:documentation><![CDATA[ Student ID ]]]></xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="name" type="xsd:string" use="required">
-            <xsd:annotation>
-                <xsd:documentation><![CDATA[ Student Name ]]]></xsd:documentation>
-            </xsd:annotation>
-        </xsd:attribute>
-    </xsd:complexType>
-
+    <!-- Define Service XSD -->
     <xsd:complexType name="service">
+        <xsd:attribute name="id" type="xsd:ID" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Service ID ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
         <xsd:attribute name="interface" type="xsd:string" use="required">
             <xsd:annotation>
                 <xsd:documentation><![CDATA[ Service Interface ]]]></xsd:documentation>
@@ -33,7 +26,8 @@
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
-    
+
+    <!-- Define Registry XSD -->
     <xsd:complexType name="registry">
         <xsd:attribute name="protocol" type="xsd:string" use="required">
             <xsd:annotation>
@@ -46,15 +40,35 @@
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
+
+    <!-- Define Referer XSD -->
+    <xsd:complexType name="referer">
+        <xsd:attribute name="id" type="xsd:ID" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Reference Bean Id ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="interface" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="serializeType" type="xsd:string" use="optional"></xsd:attribute>
+        <xsd:attribute name="compressType" type="xsd:string" use="optional"></xsd:attribute>
+    </xsd:complexType>
+
+    <!---->
+    <xsd:complexType name="method">
+        <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="timeout" type="xsd:int" use="optional"></xsd:attribute>
+        <xsd:attribute name="serialize" type="xsd:string" use="optional"></xsd:attribute>
+        <xsd:attribute name="compress" type="xsd:string" use="optional"></xsd:attribute>
+    </xsd:complexType>
     
     <xsd:complexType name="protocol">
         <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
         <xsd:attribute name="port" type="xsd:string" use="required"></xsd:attribute>
     </xsd:complexType>
 
-    <xsd:element name="student" type="studentType"></xsd:element>
     <xsd:element name="protocol" type="protocol"></xsd:element>
     <xsd:element name="registry" type="registry"></xsd:element>
     <xsd:element name="service" type="service"></xsd:element>
+    <xsd:element name="referer" type="referer"></xsd:element>
 
 </xsd:schema>

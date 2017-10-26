@@ -7,6 +7,7 @@ public class ParseContant {
 
     /**************Element**************/
     public static final String REGISTRY = "registry";
+    public static final String ID = "id";
 
     /*************Service**************/
     public static final String INTERFACE_CLASS = "interfaceClazz";
@@ -18,4 +19,7 @@ public class ParseContant {
     public static final String PROTOCOL    = "protocol";
     public static final String ADDRESS     = "address";
     public static final String INIT_METHOD = "start";
+
+    /*************Referer****************/
+    public static final String METHODS = "methods";
 }

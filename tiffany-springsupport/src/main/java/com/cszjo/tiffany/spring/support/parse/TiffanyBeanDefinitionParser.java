@@ -1,6 +1,7 @@
 package com.cszjo.tiffany.spring.support.parse;
 
 import com.cszjo.tiffany.core.config.AbstractConfig;
+import com.cszjo.tiffany.core.config.RefererConfig;
 import com.cszjo.tiffany.core.config.RegistryConfig;
 import com.cszjo.tiffany.core.config.ServiceConfig;
 import com.cszjo.tiffany.core.contant.ExceptionContant;
@@ -22,9 +23,10 @@ import static com.google.common.base.Preconditions.*;
 /**
  * Created by hansiming on 2017/10/20.
  */
+@Deprecated
 public class TiffanyBeanDefinitionParser implements BeanDefinitionParser {
 
-    public static final String  ADDRESS_REGEXP =  "((?:(?:25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))\\.){3}(?:25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))):\\d";
+    private static final String ADDRESS_REGEXP =  "((?:(?:25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))\\.){3}(?:25[0-5]|2[0-4]\\d|((1\\d{2})|([1-9]?\\d)))):\\d";
     private static final Logger LOGGER         = LoggerFactory.getLogger(TiffanyBeanDefinitionParser.class);
 
     private String                          id;
@@ -42,6 +44,8 @@ public class TiffanyBeanDefinitionParser implements BeanDefinitionParser {
             parseServiceConfig(element, parserContext, builder);
         } else if (RegistryConfig.class.equals(configClazz)) {
             builder = parseRegistryConfig(element);
+        } else if (RefererConfig.class.equals(configClazz)) {
+
         }
 
         builder.setLazyInit(false);

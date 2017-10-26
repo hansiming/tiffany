@@ -2,7 +2,7 @@ package com.cszjo.tiffany.core.registry.impl;
 
 import com.cszjo.tiffany.core.config.ServiceInstanceMetaInfo;
 import com.cszjo.tiffany.core.contant.ServiceInstanceContant;
-import com.cszjo.tiffany.core.registry.ServiceDiscover;
+import com.cszjo.tiffany.core.registry.AbstractServiceDiscover;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.ChildData;
@@ -16,10 +16,12 @@ import org.apache.curator.x.discovery.ServiceInstance;
 import org.apache.curator.x.discovery.details.InstanceSerializer;
 import org.apache.curator.x.discovery.details.JsonInstanceSerializer;
 
+import java.util.Collection;
+
 /**
  * Created by hansiming on 2017/10/24.
  */
-public class ZkServiceDIscover<T> implements ServiceDiscover<T>, TreeCacheListener {
+public class ZkServiceDiscover extends AbstractServiceDiscover<ServiceInstanceMetaInfo> implements TreeCacheListener {
 
     private String                                      address;
     private ServiceDiscovery<ServiceInstanceMetaInfo>   serviceDiscover;
@@ -41,16 +43,29 @@ public class ZkServiceDIscover<T> implements ServiceDiscover<T>, TreeCacheListen
         cache.start();
     }
 
-    public void registerService(ServiceInstance<T> serviceInstance) throws Exception {
-
+    @Override
+    public void registerService(ServiceInstance<ServiceInstanceMetaInfo> service) throws Exception {
+        serviceDiscover.registerService(service);
     }
 
-    public void updateService(ServiceInstance<T> service) throws Exception {
-
+    @Override
+    public void updateService(ServiceInstance<ServiceInstanceMetaInfo> service) throws Exception {
+        serviceDiscover.updateService(service);
     }
 
-    public void unregisterService(ServiceInstance<T> serviceInstance) throws Exception {
+    @Override
+    public void unregisterService(ServiceInstance<ServiceInstanceMetaInfo> service) throws Exception {
+        serviceDiscover.unregisterService(service);
+    }
 
+    @Override
+    public Collection<String> queryForNames() throws Exception {
+        return serviceDiscover.queryForNames();
+    }
+
+    @Override
+    public Collection<ServiceInstance<ServiceInstanceMetaInfo>> queryInstanceByName(String name) throws Exception {
+        return serviceDiscover.queryForInstances(name);
     }
 
     @Override
@@ -59,6 +74,7 @@ public class ZkServiceDIscover<T> implements ServiceDiscover<T>, TreeCacheListen
         ServiceInstance serviceInstance = serializer.deserialize(data.getData());
         switch (treeCacheEvent.getType()) {
             case NODE_ADDED: {
+
                 break;
             }
             case NODE_UPDATED: {
@@ -76,5 +92,14 @@ public class ZkServiceDIscover<T> implements ServiceDiscover<T>, TreeCacheListen
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "ZkServiceDiscover{" +
+                "address='" + address + '\'' +
+                ", serviceDiscover=" + serviceDiscover +
+                ", serializer=" + serializer +
+                '}';
     }
 }

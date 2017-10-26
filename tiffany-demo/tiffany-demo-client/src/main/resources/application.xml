@@ -9,9 +9,6 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.cszjo.com/schema/tiffany http://www.cszjo.com/schema/tiffany.xsd">
 
-    <context:component-scan base-package="com.cszjo.tiffany.server.service.impl"/>
-
-    <tiffany:service id="aac" interface="com.cszjo.tiffany.api.SampleService" ref="sampleService" />
     <tiffany:registry protocol="zookeeper" address="192.168.149.94:2181" />
-
+    <tiffany:referer id="sampleService" interface="com.cszjo.tiffany.api.SampleService" />
 </beans>
