@@ -1,11 +1,12 @@
 package com.cszjo.tiffany.core.codec;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
  * Created by hansiming on 2017/10/16.
  */
-public class Request {
+public class Request implements Serializable {
 
     private String serviceName;
 
