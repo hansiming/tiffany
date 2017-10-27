@@ -1,9 +1,9 @@
 package com.cszjo.tiffany.core.config;
 
 import com.cszjo.tiffany.core.registry.AbstractServiceDiscover;
-import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by hansiming on 2017/10/27.
@@ -11,7 +11,7 @@ import java.util.List;
 public class ServerBeanConfig extends AbstractConfig {
 
     private AbstractServiceDiscover serviceDiscover;
-    private List<ServiceConfig>     services = Lists.newArrayList();
+    private Set<ServiceConfig> services = Sets.newHashSet();
 
     public AbstractServiceDiscover getServiceDiscover() {
         return serviceDiscover;
@@ -21,11 +21,15 @@ public class ServerBeanConfig extends AbstractConfig {
         this.serviceDiscover = serviceDiscover;
     }
 
-    public List<ServiceConfig> getServices() {
+    public Set<ServiceConfig> getServices() {
         return services;
     }
 
-    public void setServices(List<ServiceConfig> services) {
+    public void setServices(Set<ServiceConfig> services) {
         this.services = services;
+    }
+
+    public void start() {
+
     }
 }

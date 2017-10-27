@@ -16,6 +16,7 @@ public class ParseContant {
     public static final String SERVER          = "server";
     public static final String SERVER_ID       = "serverId";
     public static final String CONTEXT         = "context";
+    public static final String PORT            = "port";
 
 
     /*************Registry**************/

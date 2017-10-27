@@ -11,6 +11,7 @@ public class ServiceConfig<T> extends AbstractConfig {
     private T                  ref;
     private ApplicationContext context;
     private String             serverId;
+    private int                port;
 
     public Class<T> getInterfaceClazz() {
         return interfaceClazz;
@@ -44,16 +45,48 @@ public class ServiceConfig<T> extends AbstractConfig {
         this.serverId = serverId;
     }
 
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     private void start() {
         ServerBeanConfig server  = (ServerBeanConfig) context.getBean(serverId);
         server.getServices().add((ServiceConfig) context.getBean(this.id));
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (obj == this)
+            return true;
+        if (obj instanceof ServiceConfig) {
+            ServiceConfig config = (ServiceConfig) obj;
+            if (config.interfaceClazz.equals(this.interfaceClazz))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 31;
+        int result = 1;
+        result = PRIME * result + interfaceClazz.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "ServiceConfig{" +
-                "interfaceClazz='" + interfaceClazz + '\'' +
-                ", ref='" + ref + '\'' +
+                "interfaceClazz=" + interfaceClazz +
+                ", ref=" + ref +
+                ", context=" + context +
+                ", serverId='" + serverId + '\'' +
                 '}';
     }
 }

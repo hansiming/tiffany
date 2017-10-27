@@ -13,6 +13,7 @@ public class TiffanyServerApplication {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:application.xml");
 //        AbstractConfig config = (AbstractConfig)context.getBean("com.cszjo.tiffany.api.SampleService");
 //        System.out.println(config);
-
+        AbstractConfig config = (AbstractConfig)context.getBean("tiffanyServer");
+        System.out.println(config);
     }
 }

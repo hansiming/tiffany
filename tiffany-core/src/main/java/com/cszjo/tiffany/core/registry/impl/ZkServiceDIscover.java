@@ -71,7 +71,7 @@ public class ZkServiceDiscover extends AbstractServiceDiscover<ServiceInstanceMe
     @Override
     public void childEvent(CuratorFramework curatorFramework, TreeCacheEvent treeCacheEvent) throws Exception {
         ChildData data = treeCacheEvent.getData();
-        ServiceInstance serviceInstance = serializer.deserialize(data.getData());
+//        ServiceInstance serviceInstance = serializer.deserialize(data.getData());
         switch (treeCacheEvent.getType()) {
             case NODE_ADDED: {
 

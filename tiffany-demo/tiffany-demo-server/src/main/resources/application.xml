@@ -11,7 +11,11 @@
 
     <context:component-scan base-package="com.cszjo.tiffany.server.service.impl"/>
 
-    <tiffany:service id="aac" server="tiffanyServer" interface="com.cszjo.tiffany.api.SampleService" ref="sampleService" />
+    <tiffany:service id="aac" server="tiffanyServer" port="8801" interface="com.cszjo.tiffany.api.SampleService" ref="sampleService" />
+    <tiffany:service id="vvc" server="tiffanyServer" port="8802" interface="com.cszjo.tiffany.api.SampleService" ref="sampleService" />
+    <tiffany:service id="aad" server="tiffanyServer" port="8001" interface="com.cszjo.tiffany.api.SampleService" ref="sampleService" />
+
     <tiffany:registry id="registry" protocol="zookeeper" address="192.168.149.94:2181" />
+
     <tiffany:server id="tiffanyServer" registry="registry" />
 </beans>

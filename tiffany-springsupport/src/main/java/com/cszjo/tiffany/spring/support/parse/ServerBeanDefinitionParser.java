@@ -26,7 +26,7 @@ public class ServerBeanDefinitionParser extends AbstractBeanDefinitionParser {
         addRefBeanDefinition(registry, ParseContant.SERVICE_DISCOVER, parserContext, builder);
         parserContext.getRegistry().registerBeanDefinition(id, builder.getBeanDefinition());
         LOGGER.info("create a bean definition, id = {}, bean class = {}",
-                this.id, builder.getBeanDefinition().getBeanClassName());
+                id, builder.getBeanDefinition().getBeanClassName());
         return builder.getBeanDefinition();
     }
 }
