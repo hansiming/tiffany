@@ -15,19 +15,17 @@ import org.w3c.dom.Element;
  */
 public class RegistryBeanDefinitionParser extends AbstractBeanDefinitionParser {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TiffanyBeanDefinitionParser.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RegistryBeanDefinitionParser.class);
 
     public RegistryBeanDefinitionParser(Class<? extends AbstractConfig> configClazz) {
         super(configClazz);
     }
 
     public BeanDefinition parse(Element element, ParserContext parserContext) {
-        String protocol     = element.getAttribute(ParseContant.PROTOCOL);
-        String address      = element.getAttribute(ParseContant.ADDRESS);
+        String protocol     = getAttributeNameByElement(ParseContant.PROTOCOL, element);
+        String address      = getAttributeNameByElement(ParseContant.ADDRESS, element);
         Class  serviceClass = RegistryConfig.getServiceDiscoverByEnum(protocol);
 
-        checkAttributeIsNullOrEmpty(protocol, element.getTagName(), ParseContant.PROTOCOL);
-        checkAttributeIsNullOrEmpty(address, element.getTagName(), ParseContant.ADDRESS);
         checkProtocolIsExists(serviceClass, protocol);
         checkAddressIsInvalid(address);
 

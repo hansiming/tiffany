@@ -13,6 +13,9 @@ public class ParseContant {
     public static final String INTERFACE_CLASS = "interfaceClazz";
     public static final String INTERFACE       = "interface";
     public static final String REF             = "ref";
+    public static final String SERVER          = "server";
+    public static final String SERVER_ID       = "serverId";
+    public static final String CONTEXT         = "context";
 
 
     /*************Registry**************/
@@ -22,4 +25,7 @@ public class ParseContant {
 
     /*************Referer****************/
     public static final String METHODS = "methods";
+
+    /*************Server****************/
+    public static final String SERVICE_DISCOVER = "serviceDiscover";
 }

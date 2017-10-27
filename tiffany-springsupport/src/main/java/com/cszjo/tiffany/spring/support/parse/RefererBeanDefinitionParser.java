@@ -24,13 +24,10 @@ public class RefererBeanDefinitionParser extends AbstractBeanDefinitionParser {
     }
 
     public BeanDefinition parse(Element element, ParserContext parserContext) {
-        String id             = element.getAttribute(ParseContant.ID);
-        String interfaceClazz = element.getAttribute(ParseContant.INTERFACE);
+        String id             = getAttributeNameByElement(ParseContant.ID, element);
+        String interfaceClazz = getAttributeNameByElement(ParseContant.INTERFACE, element);
 
-        checkAttributeIsNullOrEmpty(id, element.getTagName(), ParseContant.ID);
-        checkAttributeIsNullOrEmpty(interfaceClazz, element.getTagName(), ParseContant.INTERFACE);
-
-        Class clazz = null;
+        Class  clazz                  = null;
         Map<String, Method> methodMap = Maps.newHashMap();
         try {
             clazz = Class.forName(interfaceClazz);

@@ -25,10 +25,34 @@
                 <xsd:documentation><![CDATA[ Service Ref ]]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
+        <xsd:attribute name="server" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Service Server Id ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <!-- Define Server XSD -->
+    <xsd:complexType name="server">
+        <xsd:attribute name="id" type="xsd:ID" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Server Id ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="registry" type="xsd:string" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Server registry Id ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
     </xsd:complexType>
 
     <!-- Define Registry XSD -->
     <xsd:complexType name="registry">
+        <xsd:attribute name="id" type="xsd:ID" use="required">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ Registry ID ]]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
         <xsd:attribute name="protocol" type="xsd:string" use="required">
             <xsd:annotation>
                 <xsd:documentation><![CDATA[ Registry Protocol Like Zookeeper ]]]></xsd:documentation>
@@ -70,5 +94,6 @@
     <xsd:element name="registry" type="registry"></xsd:element>
     <xsd:element name="service" type="service"></xsd:element>
     <xsd:element name="referer" type="referer"></xsd:element>
+    <xsd:element name="server" type="server"></xsd:element>
 
 </xsd:schema>

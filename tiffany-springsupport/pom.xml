@@ -12,7 +12,6 @@
     <artifactId>tiffany-springsupport</artifactId>
 
     <properties>
-        <spring-framework.version>4.3.5.RELEASE</spring-framework.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.source.jdk>1.8</java.source.jdk>
     </properties>
@@ -27,13 +26,6 @@
             <groupId>com.cszjo</groupId>
             <artifactId>tiffany-demo</artifactId>
             <version>${project.parent.version}</version>
-        </dependency>
-
-        <!-- Spring 4.3.5 RELEASE -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring-framework.version}</version>
         </dependency>
     </dependencies>
 </project>

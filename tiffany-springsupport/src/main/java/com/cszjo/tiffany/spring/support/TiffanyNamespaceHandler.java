@@ -1,11 +1,12 @@
 package com.cszjo.tiffany.spring.support;
 
-import com.cszjo.tiffany.core.config.RefererConfig;
 import com.cszjo.tiffany.core.config.RegistryConfig;
+import com.cszjo.tiffany.core.config.ServerBeanConfig;
 import com.cszjo.tiffany.core.config.ServiceConfig;
 import com.cszjo.tiffany.spring.support.parse.RefererBeanDefinitionParser;
 import com.cszjo.tiffany.spring.support.parse.RegistryBeanDefinitionParser;
-import com.cszjo.tiffany.spring.support.parse.TiffanyBeanDefinitionParser;
+import com.cszjo.tiffany.spring.support.parse.ServerBeanDefinitionParser;
+import com.cszjo.tiffany.spring.support.parse.ServiceBeanDefinitionParser;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
@@ -14,8 +15,9 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 public class TiffanyNamespaceHandler extends NamespaceHandlerSupport {
 
     public void init() {
-        registerBeanDefinitionParser("service", new TiffanyBeanDefinitionParser(ServiceConfig.class));
         registerBeanDefinitionParser("registry", new RegistryBeanDefinitionParser(RegistryConfig.class));
-        registerBeanDefinitionParser("referer", new RefererBeanDefinitionParser(RefererConfig.class));
+        registerBeanDefinitionParser("referer",  new RefererBeanDefinitionParser(RegistryConfig.class));
+        registerBeanDefinitionParser("server",   new ServerBeanDefinitionParser(ServerBeanConfig.class));
+        registerBeanDefinitionParser("service",  new ServiceBeanDefinitionParser(ServiceConfig.class));
     }
 }

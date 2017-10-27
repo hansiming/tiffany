@@ -5,7 +5,7 @@ package com.cszjo.tiffany.core.config;
  */
 public abstract class AbstractConfig {
 
-    private String id;
+    protected String id;
 
     public String getId() {
         return id;
