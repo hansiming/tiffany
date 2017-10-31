@@ -19,6 +19,7 @@ import org.apache.curator.x.discovery.details.JsonInstanceSerializer;
 import java.util.Collection;
 
 /**
+ * Zookeeper 服务发现
  * Created by hansiming on 2017/10/24.
  */
 public class ZkServiceDiscover extends AbstractServiceDiscover<ServiceInstanceMetaInfo> implements TreeCacheListener {
