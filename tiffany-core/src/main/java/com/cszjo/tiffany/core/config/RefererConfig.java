@@ -26,4 +26,12 @@ public class RefererConfig<T> extends AbstractConfig {
     public void setMethods(Map<String, Method> methods) {
         this.methods = methods;
     }
+
+    @Override
+    public String toString() {
+        return "RefererConfig{" +
+                "interfaceClazz=" + interfaceClazz +
+                ", methods=" + methods +
+                '}';
+    }
 }

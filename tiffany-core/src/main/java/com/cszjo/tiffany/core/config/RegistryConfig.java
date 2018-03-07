@@ -46,4 +46,12 @@ public class RegistryConfig extends AbstractConfig {
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "RegistryConfig{" +
+                "address='" + address + '\'' +
+                ", protocol='" + protocol + '\'' +
+                '}';
+    }
 }
